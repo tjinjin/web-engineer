@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620123424) do
+ActiveRecord::Schema.define(version: 20160621162317) do
+
+  create_table "snippets", force: :cascade do |t|
+    t.integer  "gist_id"
+    t.string   "gist_url"
+    t.string   "language"
+    t.text     "plain_code"
+    t.text     "highlighted_code"
+    t.integer  "user_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "snippets", ["user_id"], name: "index_snippets_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
