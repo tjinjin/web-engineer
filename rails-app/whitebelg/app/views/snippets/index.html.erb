@@ -1,7 +1,7 @@
 <h1>Snippets#index</h1>
 <p>Find me in app/views/snippets/index.html.erb</p>
 
-<% @snippets.each do |snippets| %>
+<% @snippets.each do |snippet| %>
   <% if snippet.gist_url %>
     <%= link_to snippet.gist_url, snippet.gist_url, target: '_blank' %>
   <% end %>
@@ -10,8 +10,8 @@
     <% if snippet.highlighted_code.present? %>
       <%= snippet.highlighted_code.html_safe %>
     <% else %>
-      <%= content_tag(:pre, snippet,plain_code) %>
+      <%= content_tag(:pre, snippet.plain_code) %>
     <% end %>
   </p>
-  <br />
+  <hr />
 <% end %>
