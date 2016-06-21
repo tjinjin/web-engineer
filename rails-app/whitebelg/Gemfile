@@ -52,3 +52,5 @@ gem 'omniauth-github'
 
 ### for ENV
 gem 'dotenv-rails'
+
+gem 'octokit'
