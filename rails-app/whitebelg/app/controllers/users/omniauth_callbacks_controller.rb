@@ -7,7 +7,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.find_by_provider_and_uid(auth['provider'], auth['uid']) ||
       User.create_with_omniauth(auth)
 
-    octokit = Octokit::Client.new(access_token @user.token)
+    octokit = Octokit::Client.new(access_token: @user.token)
     octokit.gists.each do |gist|
       unless Snippet.find_by(gist_id: gist[:id])
         gist[:files].to_hash.each do |filename, gist_info|
