@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'snippets/index'
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   get 'top/index'
 

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gist_id: 1
+  gist_url: MyString
+  language: MyString
+  plain_code: MyText
+  highlighted_code: MyText
+  user_id: 
+
+two:
+  gist_id: 1
+  gist_url: MyString
+  language: MyString
+  plain_code: MyText
+  highlighted_code: MyText
+  user_id: 
