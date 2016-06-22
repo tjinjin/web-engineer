@@ -4,7 +4,7 @@ class SnippetsController < ApplicationController
   def index
     @snippets = Snippet.all
     @snippets.each do |snippet|
-      uri = URI.parse('http://pygments.appspot.com/')
+      uri = URI.parse('http://pygments.org/')
       request = Net::HTTP.post_form(uri, lang: snippet.language, code: snippet.plain_code)
       snippet.update(highlighted_code: request.body)
     end
