@@ -55,3 +55,4 @@ gem 'dotenv-rails'
 
 gem 'octokit'
 gem 'httparty'
+gem 'sidekiq'
