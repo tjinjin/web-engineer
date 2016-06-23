@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe SnippetsController, type: :controller do
   describe 'GET #index' do
     before do
-      @request.env['devise.mapping'] = Devise.mapping[:user]
+      @request.env['devise.mapping'] = Devise.mappings[:user]
     end
 
     let(:snippet) { FactoryGirl.create(:snippet, plain_code: 'hi') }
