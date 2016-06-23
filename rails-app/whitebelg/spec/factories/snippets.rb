@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :snippet, class: 'Snippets' do
-    language "MyString"
-    plain_code "MyText"
+    language "ruby"
+    plain_code 'puts "Hello World"'
   end
 end
