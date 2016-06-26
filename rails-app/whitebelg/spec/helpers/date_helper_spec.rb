@@ -12,8 +12,10 @@ require 'rails_helper'
 # end
 RSpec.describe DateHelper, :type => :helper do
   describe '#date_format' do
+    before { Timecop.travel(2014, 10, 30) }
+    after  { Timecop.return }
     it {
-      expect(helper.date_format(Date.today)).to eq "2016年の06月26日です"
+      expect(helper.date_format(Date.today)).to eq "2014年の10月30日です"
     }
   end
 end
