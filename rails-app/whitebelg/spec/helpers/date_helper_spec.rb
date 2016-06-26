@@ -11,5 +11,9 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe DateHelper, :type => :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#date_format' do
+    it {
+      expect(helper.date_format(Date.today)).to eq "2016年の06月26日です"
+    }
+  end
 end
