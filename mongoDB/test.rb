@@ -1,8 +1,8 @@
 require 'rubygems'
 require 'mongo'
 
-connection = Mongo::Connection.new('localhost', 27017)
-db = connection.db('mydb') #mydbデータベースに接続
+connection = Mongo::Client.new('mongodb://127.0.0.1:27017/mydb')
+db = connection.database
 
 # まだコレクションが存在しない
 p db.collection_names
@@ -10,7 +10,7 @@ p db.collection_names
 users = db.collection('users')
 
 (201..300).each do |i|
-  users.insert(name: "tjinjin#{i}")
+  users.insert_one(name: "tjinjin#{i}")
 end
 
 # usersがある
